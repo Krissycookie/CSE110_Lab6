@@ -41,6 +41,10 @@ function addRecipesToDocument(recipes) {
   //            create a <recipe-card> element for each one, and populate
   //            each <recipe-card> with that recipe data using element.data = ...
   //            Append each element to <main>
+  if (recipes == null)
+  {
+    return;
+  }
   for (let i = 0; i < recipes.length; i++)
   {
     let recipeEl = document.createElement('recipe-card');
@@ -118,7 +122,7 @@ function initFormHandler() {
     // Steps B12 & B13 will occur inside the event listener from step B11
     // B12. TODO - Clear the local storage
     localStorage.clear();
-    
+
     // B13. TODO - Delete the contents of <main>
     document.querySelector('main').innerHTML = '';
   })
